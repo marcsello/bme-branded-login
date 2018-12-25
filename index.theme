@@ -1,0 +1,6 @@
+[theme]
+name=bme-branded
+description=Simple login screen featuring the main building of the Budapest University of Technology and Economics
+engine=lightdm-webkit-greeter
+url=index.html
+session=gnome
