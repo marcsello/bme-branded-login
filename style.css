@@ -1,0 +1,10 @@
+@font-face {
+	font-family: 'OpenSans';
+	src:  url('opensans.woff2') format('woff2');
+}
+
+
+body {
+	background-image: url('bme_k_s.png');
+	/*pointer-events: none;*/
+}

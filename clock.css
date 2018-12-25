@@ -1,0 +1,29 @@
+#right-container {
+	-webkit-user-select: none;
+	user-select: none;
+
+	position: absolute;
+	right: 50px;
+	top: 40px;
+
+	text-align: right;
+}
+
+div.clock_part {
+	color: white;
+	font-family: 'OpenSans', sans-serif;
+}
+
+
+#clock {
+	font-size: 6em;
+	line-height: 1em;
+}
+
+#date {
+	font-size: 1.5em;
+}
+
+#day {
+	font-size: 1.5em;
+}

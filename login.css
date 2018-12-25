@@ -1,0 +1,19 @@
+input.simple_input {
+	border: none;
+	border-bottom: 3px solid white;
+	text-align: center;
+	background: transparent;
+	font-size: 2em;
+	color: white;
+}
+
+*:focus {
+    outline: none;
+}
+
+#login {
+	position: absolute;
+	bottom: 50px;
+	left: 50px;
+
+}

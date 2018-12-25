@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="clock.css">
+	<link rel="stylesheet" href="login.css">
+
+	<script src="login.js"></script>
+	<script src="clock.js"></script>
+
+</head><body>
+
+	<div id="right-container" unselectable="on" onselectstart="return false;" onmousedown="return false;">
+		<div class="clock_part" id="clock">13:00</div>
+		<div class="clock_part" id="date">2018. December 24.</div>
+		<div class="clock_part" id="day">Monday</div>
+	</div>
+
+	<div id="login">
+		<input class="simple_input" name="username_field" id="username_field" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+		<input class="simple_input" name="password_field" id="password_field" type="password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+	</div>
+
+
+<script>
+	startDateTime();
+	initLogin();
+</script>
+</body>
+</html>
