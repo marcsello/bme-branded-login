@@ -30,7 +30,7 @@ document.addEventListener('keyup', function(e) {
 		}
 		else if (document.activeElement == password_field) {
 
-			startAuth(username_field.value,password_field.value);
+			startAuth();
 		} else {
 
 			username_field.focus();
@@ -75,9 +75,41 @@ function resetLogin() {
 	username_field.value = "";
 	password_field.value = "";
 	loading_animation.hide();
+
+	lightdm.cancel_authentication();
 }
 
-function startAuth(username,password) {
+function startAuth() {
 	loading_animation.show();
+
+	lightdm.authenticate(username_field.value);
+}
+
+
+/* Callbacks */
+
+
+window.show_prompt = function(text, type) {
+
+	if (type === "password") {
+		lightdm.respond(password_field.value);
+	}
+
+}
+
+
+window.show_message = function(text, type) {
+
+
+
+}
+
+
+window.authentication_complete = function() {
+	loading_animation.hide();
+
+	if (lightdm.is_authenticated) {
+		lightdm.start_session();
+	}
 
 }
