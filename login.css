@@ -1,19 +1,64 @@
 input.simple_input {
 	border: none;
-	border-bottom: 3px solid white;
-	text-align: center;
+	border-bottom: 2px solid white;
 	background: transparent;
 	font-size: 2em;
 	color: white;
+
+	transition: .5s;
+
+	text-shadow: 0px 0px 10px black;
+
+	width: 350px;
 }
 
-*:focus {
-    outline: none;
+input.simple_input:focus {
+	outline: none;
 }
 
-#login {
+#username_field:not(:focus) {
+	font-size: 1.7em;
+	border: none;
+	line-height: 0;
+}
+
+#password_field:not(:focus) {
+	font-size: 0;
+	width: 0;
+}
+
+
+#login-container {
 	position: absolute;
 	bottom: 50px;
 	left: 50px;
+	width: 350px;
+}
 
+#loading-container {
+	position: absolute;
+	bottom: 50px;
+	left: 410px;
+}
+
+#loading {
+	width: 2em;
+	height: 2em;
+
+	transition: .5s;
+	opacity: 0;
+	animation: rotation 2s infinite linear;
+}
+
+img.loading_visible {
+	opacity: 1 !important;
+}
+
+@keyframes rotation {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(359deg);
+	}
 }
