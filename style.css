@@ -5,6 +5,6 @@
 
 
 body {
-	background-image: url('bme_k_s.png');
+	background: url('bme_k_s.png') no-repeat center center fixed; 
 	background-size: cover;
 }
