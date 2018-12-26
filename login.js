@@ -101,7 +101,7 @@ class LoginFormManager {
 		this.passwordElement.classList.add("hidden");
 
 		// show username
-		this.usernameElement.classList.remove("hidden","wrong","grey");
+		this.usernameElement.classList.remove("hidden","grey");
 		this.usernameElement.classList.add("active");
 
 		// set focus
@@ -118,7 +118,7 @@ class LoginFormManager {
 		this.usernameElement.classList.add("grey");
 
 		// show password
-		this.passwordElement.classList.remove("hidden","wrong","grey");
+		this.passwordElement.classList.remove("hidden","grey");
 		this.passwordElement.classList.add("active");
 
 
@@ -167,7 +167,7 @@ function initLogin() { // Called when DOM is ready
 	document.addEventListener('keyup', function(e) {
 
 		if (e.key === "Enter" || e.key === " ") { // start authenticating when either enter or space is pressed
-			if (!lightdm.in_authentication)
+			if (!loginform.active) // lightdm.in_authentication is borked, so we use an ugly workaround here
 				lightdm.authenticate();
 		} else if (e.key == "Escape") { // Escape cancels auth
 			lightdm.cancel_authentication();
