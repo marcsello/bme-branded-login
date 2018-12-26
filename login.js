@@ -41,8 +41,9 @@ class LoginFormManager {
 
 				e.preventDefault();
 
-				if (this.usernameDoneCallback)
-					this.usernameDoneCallback(this.username);
+				if (this.username.length !== 0) // allow non-empty only
+					if (this.usernameDoneCallback)
+						this.usernameDoneCallback(this.username);
 
 			}
 
@@ -55,8 +56,9 @@ class LoginFormManager {
 
 				e.preventDefault();
 
-				if (this.passwordDoneCallback)
-					this.passwordDoneCallback(this.password);
+				if (this.password.length !== 0) // allow non-empty only
+					if (this.passwordDoneCallback)
+						this.passwordDoneCallback(this.password);
 
 			} else if (e.key === "Tab") { // tab would bring back to the username entry... but lightdm should be notified about this as well, so we don't do anything yolo here
 
