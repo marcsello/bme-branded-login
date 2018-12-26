@@ -8,3 +8,46 @@ body {
 	background: url('bme_k_s.png') no-repeat center center fixed; 
 	background-size: cover;
 }
+
+#curtain {
+
+	background: black;
+
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+
+	z-index: 1;
+
+}
+
+div.curtain_folded {
+	animation: fadeIn 1s ease-out;
+	opacity: 1;
+}
+
+div.curtain_unfolded {
+	animation: fadeOut 1s ease-out;
+	opacity: 0;
+}
+
+
+@keyframes fadeIn{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@keyframes fadeOut{
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}

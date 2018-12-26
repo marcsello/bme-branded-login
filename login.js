@@ -19,6 +19,31 @@ class LoadingAnimation {
 
 }
 
+class Curtain {
+
+	constructor(id) {
+		this.element = document.getElementById(id);
+		this.element.addEventListener('animationend', function() {
+			if (this.element.classList.contains('curtain_folded')) {
+				if (this.curtainFoldedCallback)
+					this.curtainFoldedCallback();
+			} else {
+				if (this.curtainUnfoldedCallback)
+					this.curtainUnfoldedCallback();
+
+			}
+		}.bind(this));
+	}
+
+	fold() { // set opactity to 1
+		this.element.classList.replace('curtain_unfolded','curtain_folded');
+	}
+
+	unfold() { // set opactiy to 0
+		this.element.classList.replace('curtain_folded','curtain_unfolded');
+	}
+
+}
 
 class LoginFormManager {
 
@@ -161,6 +186,7 @@ class LoginFormManager {
 
 function initLogin() { // Called when DOM is ready
 	loading_animation = new LoadingAnimation("loading");
+	curtain = new Curtain("curtain");
 	loginform = new LoginFormManager("username_field","password_field");
 
 
@@ -220,7 +246,14 @@ function initLogin() { // Called when DOM is ready
 		loading_animation.hide();
 
 		if (lightdm.is_authenticated) {
-			lightdm.start_session();
+
+			curtain.curtainFoldedCallback = function() {
+				lightdm.start_session();
+			};
+
+			curtain.fold(); // gently fade out before starting the session
+
+
 		} else {
 			lightdm.authenticate(loginform.username); // this should bring us back to the password form
 			loginform.showPasswordError();
