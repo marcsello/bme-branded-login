@@ -6,6 +6,13 @@
 	<link rel="stylesheet" href="clock.css">
 	<link rel="stylesheet" href="login.css">
 
+	<script>
+		if (typeof lightdm === 'undefined') {
+			var dummy_lightdm_js = document.createElement('script');
+			dummy_lightdm_js.src = "dummy_lightdm.js";
+			document.getElementsByTagName('head')[0].appendChild(dummy_lightdm_js);
+		}
+	</script>
 	<script src="login.js"></script>
 	<script src="clock.js"></script>
 
@@ -18,8 +25,12 @@
 	</div>
 
 	<div id="login-container">
-			<input class="simple_input hidden" name="username_field" id="username_field" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-			<input class="simple_input hidden" name="password_field" id="password_field" type="password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+			<div>
+				<input class="simple_input hidden" name="username_field" id="username_field" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+			</div>
+			<div>
+				<input class="simple_input hidden" name="password_field" id="password_field" type="password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+			</div>
 	</div>
 	<div id="loading-container">
 		<img src="loading.png" id="loading">
