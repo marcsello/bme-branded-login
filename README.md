@@ -29,6 +29,12 @@ I wanted a theme that leaves out all of this, and looks clean. This is what I ca
 5. ???
 6. Profit!
 
+## Usage
+Well, this theme is not very intuitive, so I think you'll need a little help to figure out, how to use it.  
+ -  After you greeted, you can initiate the login sequence, by pressing **Space** or **Enter**
+ -  First you have to enter your username, after you done with that, you can proceed with **Tab** or **Enter**
+ -  Now you have to enter your password. When you done with that, you can login by pressing **Enter**, or return to username editing with **Tab**.
+
 ## Contribute!
 Since I'm not a great web developer, any help would be apprechiated!  
 Adding missing features, hunting down bugs and refactoring are all things You could help me out with.
